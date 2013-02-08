@@ -55,3 +55,4 @@ function submitForm(){
 	img = $('.imgSelect input:checked').attr('value');
 	build(line1, line2, backGround, img, scale);
 }
+//test
