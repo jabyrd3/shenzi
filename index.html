@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" href="style.css" rel="stylesheet" media="all"></link>
+		<script src="jquery.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+	</head>
+	<body>
+		<form>
+			<section class="text">
+				<input type="text" placeholder="text line 1"></input>
+				<input type="text" placeholder="text line 2"></input>
+			</section>
+			<h3>Background</h3>
+			<section class='backgroundSelect'>
+				<input type="radio" value="none"></input>
+				<input type="radio" value="redblack"></input>
+			</section>
+			<h3>Shenzi Pic</h3>
+			<section class="imgSelect">
+				<input type="radio" value="img/shenzi1.jpg"></input>
+				<input type="range" min="0" max="100"></input>
+			</section>
+			<input type="submit"></input>		
+		</form>
+		<canvas id="shenziMeme" width="500" height="500">
+
+		</canvas>
+		<section id = 'images'>
+			<img src="img/shenzi1.jpg"  />
+			<img src="img/shenzDefault.jpg"  />
+		</section>
+	</body>
+</html>
