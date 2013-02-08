@@ -29,8 +29,8 @@ function printCanvas(shenzi){
 	sandbox.lineWidth = 2;
 	sandbox.fillText(shenzi.line1, 50, 50);
 	sandbox.strokeText(shenzi.line1, 50, 50);
-
-
+	sandbox.fillText(shenzi.line2, 50, 450);
+	sandbox.strokeText(shenzi.line2, 50, 450);
 }
 function build(line1, line2, backGround, img, scale){
 	shenzi = new Object();
@@ -55,4 +55,4 @@ function submitForm(){
 	img = $('.imgSelect input:checked').attr('value');
 	build(line1, line2, backGround, img, scale);
 }
-//test
+//test 

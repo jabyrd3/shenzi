@@ -8,27 +8,40 @@
 	<body>
 		<form>
 			<section class="text">
-				<input type="text" placeholder="text line 1"></input>
-				<input type="text" placeholder="text line 2"></input>
+				<input type="text" placeholder="Top line"></input>
+				<input type="text" placeholder="Bottom Line"></input>
 			</section>
-			<h3>Background</h3>
+			<h3>Pick a background:</h3>
 			<section class='backgroundSelect'>
-				<input type="radio" value="none"></input>
-				<input type="radio" value="redblack"></input>
+				<label>The coolest logo</label>
+				<input type="radio" name="background" value="img/redAndBlack.jpg"></input>
+				<label>Solid Black</label>
+				<input type="radio" name="background" value="img/shenzDefault"></input>
 			</section>
-			<h3>Shenzi Pic</h3>
+			<h3>How is Shenzi feeling?</h3>
 			<section class="imgSelect">
-				<input type="radio" value="img/shenzi1.jpg"></input>
+				<label>Shenzi forgot to close his mouth</label>
+				<input name="image" type="radio" value="img/shenzi1.jpg"></input>
+				<label>Shenzi is not amused</label>
+				<input name="image" type="radio" value="img/flipOff.jpg"></input>
+				<label>Shenzi is so dreamy</label>
+				<input name="image" type="radio" value="img/handsome.jpg"></input>
+				<label>Shenzi is pensive</label>
+				<input name="image" type="radio" value="img/pensive.jpg"></input>
+			<h3>How big do you want the image?</h3>
 				<input type="range" min="0" max="100"></input>
-			</section>
-			<input type="submit"></input>		
+			</section>		
 		</form>
 		<canvas id="shenziMeme" width="500" height="500">
 
 		</canvas>
+		<button>Download your meme!</button>
 		<section id = 'images'>
 			<img src="img/shenzi1.jpg"  />
 			<img src="img/shenzDefault.jpg"  />
+			<img src="img/flipOff.jpg"  />
+			<img src="img/pensive.jpg"  />
+			<img src="img/redAndBlack.jpg"  />
 		</section>
 	</body>
 </html>
