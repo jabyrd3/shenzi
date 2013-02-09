@@ -9,9 +9,14 @@ $(document).ready(function(){
 	$('.imgSelect input:last-child').change(function(){
 	    currentValue.html(this.value);
 	});
+	$('button').click(function(){
+		var canvas = document.getElementById('shenziMeme');
+		var image = canvas.toDataURL("image/jpg");
+		window.location = image;
+	})
 })
 function printCanvas(shenzi){
-	var sandbox = document.getElementById('shenziMeme').getContext('2d');
+    sandbox = document.getElementById('shenziMeme').getContext('2d');
 	sandbox.width = 500;
 	sandbox.height = 500;
 	var backGround = new Image();
@@ -23,14 +28,15 @@ function printCanvas(shenzi){
 
 	sandbox.drawImage(backGround, 0, 0);
 	sandbox.drawImage(shenzImage, (sandbox.width - scaleX) / 2, (sandbox.height - scaleY)/2, scaleX, scaleY);
-	sandbox.font = 'normal 42px Impact';
+	sandbox.font = 'normal 42px Impact, HelveticaNeue-CondensedBlack';
 	sandbox.fillStyle = "white";
 	sandbox.strokeStyle = "black";
 	sandbox.lineWidth = 2;
-	sandbox.fillText(shenzi.line1, 50, 50);
-	sandbox.strokeText(shenzi.line1, 50, 50);
-	sandbox.fillText(shenzi.line2, 50, 450);
-	sandbox.strokeText(shenzi.line2, 50, 450);
+	sandbox.textAlign ='center';
+	sandbox.fillText(shenzi.line1, 250, 50);
+	sandbox.strokeText(shenzi.line1, 250, 50);
+	sandbox.fillText(shenzi.line2, 250, 450);
+	sandbox.strokeText(shenzi.line2, 250, 450);
 }
 function build(line1, line2, backGround, img, scale){
 	shenzi = new Object();
@@ -50,8 +56,8 @@ function submitForm(){
 	var scale = 100;
 	line1 = $('.text input:first-child:input').val();
 	line2 = $('.text input:last-child:input').val();
-	scale = $('.imgSelect input:last-child').val();
-	//backGround = $('.backgroundSelect input:checked').attr('value');
+	scale = $('#scale').val();
+	backGround = $('.backgroundSelect input:checked').attr('value');
 	img = $('.imgSelect input:checked').attr('value');
 	build(line1, line2, backGround, img, scale);
 }

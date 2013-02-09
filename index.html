@@ -2,8 +2,11 @@
 <html>
 	<head>
 		<link type="text/css" href="style.css" rel="stylesheet" media="all"></link>
-		<script src="jquery.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 		<script type="text/javascript" src="script.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
 		<form>
@@ -11,25 +14,33 @@
 				<input type="text" placeholder="Top line"></input>
 				<input type="text" placeholder="Bottom Line"></input>
 			</section>
-			<h3>Pick a background:</h3>
 			<section class='backgroundSelect'>
-				<label>The coolest logo</label>
-				<input type="radio" name="background" value="img/redAndBlack.jpg"></input>
-				<label>Solid Black</label>
-				<input type="radio" name="background" value="img/shenzDefault"></input>
+				<fieldset data-role="controlgroup">
+					<legend>Pick a background:</legend>
+						<label for="background1">The good old red and black</label>
+						<input id="background1" type="radio" name="background" value="img/redAndBlack.png"></input>
+						<label for="background2">Tell us what shenzi thinks of ancaps</label>
+						<input id="background2" type="radio" name="background" value="img/goldAndBlack.png"></input>
+						<label for ="background3">Eco Stalinism at its finest</label>
+						<input id="background3"type="radio" name="background" value="img/greenAndBlack.png"></input>
+						<label for="background4">Solid Black</label>
+						<input id="background4" type="radio" name="background" value="img/shenzDefault.jpg"></input>
+				</fieldset>
 			</section>
-			<h3>How is Shenzi feeling?</h3>
 			<section class="imgSelect">
-				<label>Shenzi forgot to close his mouth</label>
-				<input name="image" type="radio" value="img/shenzi1.jpg"></input>
-				<label>Shenzi is not amused</label>
-				<input name="image" type="radio" value="img/flipOff.jpg"></input>
-				<label>Shenzi is so dreamy</label>
-				<input name="image" type="radio" value="img/handsome.jpg"></input>
-				<label>Shenzi is pensive</label>
-				<input name="image" type="radio" value="img/pensive.jpg"></input>
+			<fieldset data-role="controlgroup">
+				<legend>How is Shenzi feeling?</legend>
+					<label for="selectImgRadio1">Shenzi forgot to close his mouth</label>
+					<input id="selectImgRadio1" name="image" type="radio" value="img/shenzi1.jpg"></input>
+					<label for="selectImgRadio2" >Shenzi is not amused</label>
+					<input id="selectImgRadio2" name="image" type="radio" value="img/flipOff.jpg"></input>
+					<label for="selectImgRadio3" >Shenzi Classic &#0169;</label>
+					<input id="selectImgRadio3" name="image" type="radio" value="img/handsome.jpg"></input>
+					<label for="selectImgRadio4" >Shenzi is pensive</label>
+					<input id="selectImgRadio4" name="image" type="radio" value="img/pensive.jpg"></input>
+			</fieldset>
 			<h3>How big do you want the image?</h3>
-				<input type="range" min="0" max="100"></input>
+				<input id="scale" type="range" min="0" max="100"></input>
 			</section>		
 		</form>
 		<canvas id="shenziMeme" width="500" height="500">
@@ -41,7 +52,10 @@
 			<img src="img/shenzDefault.jpg"  />
 			<img src="img/flipOff.jpg"  />
 			<img src="img/pensive.jpg"  />
-			<img src="img/redAndBlack.jpg"  />
+			<img src="img/handsome.jpg"
+			<img src="img/redAndBlack.png"  />
+			<img src="img/greenAndBlack.png"  />
+			<img src="img/goldAndBlack.png"  />
 		</section>
 	</body>
 </html>
