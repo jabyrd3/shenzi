@@ -14,11 +14,11 @@ $(document).ready(function(){
 		var image = canvas.toDataURL("image/jpg");
 		window.location = image;
 	})
-})
-function printCanvas(shenzi){
     sandbox = document.getElementById('shenziMeme').getContext('2d');
 	sandbox.width = 500;
 	sandbox.height = 500;
+})
+function printCanvas(shenzi){
 	var backGround = new Image();
 	var shenzImage = new Image();
 	backGround.src = shenzi.backGround;
