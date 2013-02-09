@@ -28,20 +28,22 @@ function printCanvas(shenzi){
 
 	sandbox.drawImage(backGround, 0, 0);
 	sandbox.drawImage(shenzImage, (sandbox.width - scaleX) / 2, (sandbox.height - scaleY)/2, scaleX, scaleY);
-	sandbox.font = 'normal 42px Impact, HelveticaNeue-CondensedBlack';
+	sandbox.font = 'normal 42px "impact"';
 	sandbox.fillStyle = "white";
 	sandbox.strokeStyle = "black";
 	sandbox.lineWidth = 2;
 	sandbox.textAlign ='center';
-	sandbox.fillText(shenzi.line1, 250, 50);
-	sandbox.strokeText(shenzi.line1, 250, 50);
-	sandbox.fillText(shenzi.line2, 250, 450);
-	sandbox.strokeText(shenzi.line2, 250, 450);
+	sandbox.fillText(shenzi.line1, 250, shenzi.line1Height);
+	sandbox.strokeText(shenzi.line1, 250, shenzi.line1Height);
+	sandbox.fillText(shenzi.line2, 250, shenzi.line2Height);
+	sandbox.strokeText(shenzi.line2, 250, shenzi.line2Height);
 }
-function build(line1, line2, backGround, img, scale){
+function build(line1, line2, backGround, img, scale, height1, height2){
 	shenzi = new Object();
 	shenzi.line1 = line1;
 	shenzi.line2 = line2;
+	shenzi.line1Height = height1;
+	shenzi.line2Height = height2;
 	shenzi.backGround = backGround;
 	shenzi.img = {}
 	shenzi.img.url = img;
@@ -54,11 +56,28 @@ function submitForm(){
 	var line1 = 'default string';
 	var line2 = 'default string 2';
 	var scale = 100;
-	line1 = $('.text input:first-child:input').val();
-	line2 = $('.text input:last-child:input').val();
+	var height1 = $('#height1');
+	var height2 = $('#height2');
+
+	line1 = $('#line1').val();
+	line2 = $('#line2').val();
+
+	if(height1 !== ""){
+		height1 = height1.val();
+	}else{
+		height1 = 50;
+	}
+
+	if(height2 !== ""){
+		height2 = height2.val();
+	}else{
+		height2 = 450;
+	}
+
 	scale = $('#scale').val();
 	backGround = $('.backgroundSelect input:checked').attr('value');
 	img = $('.imgSelect input:checked').attr('value');
-	build(line1, line2, backGround, img, scale);
+
+	build(line1, line2, backGround, img, scale, height1, height2);
 }
 //test 

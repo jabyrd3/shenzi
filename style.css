@@ -1,3 +1,7 @@
+@font-face{
+	font-family: "Impact";
+	src: url('impact.ttf') format('truetype');
+}
 #images{
 	display: none;
 }
@@ -16,14 +20,17 @@ canvas{
 	user-select: none;
 }
 input[type="text"]{
-	-webkit-touch-callout: all;
-	-webkit-user-select: all;
-	-khtml-user-select: all;
-	-moz-user-select: all;
-	-ms-user-select: all;
+	-webkit-touch-callout: default;
+	-webkit-user-select: auto;
+	-khtml-user-select: auto;
+	-moz-user-select: auto;
+	-ms-user-select: auto;
 	user-select: all;
 }
 .ui-controlgroup-label{
 	font-size:24px!important;
 	font-weight: bold!important;
 }
+div:first-child > form, button{
+	padding:10px;
+};
